@@ -23,6 +23,10 @@
                         </div>
                         <div class="col-md-6 mt-5">
                             <h2>{{ $katalogs->nama_katalogs }}</h2>
+                            <form method="post" action="{{ url('pesanans') }}/{{ $katalogs->id }}" >
+                                            @csrf
+                                                <input type="text" name="jumlah_pesanans" class="form-control" required="">
+                                            </form>
                             <table class="table">
                                 <tbody>
                                     <tr>
@@ -31,28 +35,72 @@
                                     <tr>
                                         <td>Keterangan</td>
                                         <td>:</td>
-                                        <td>{{ $katalogs->keterangan }}</td>
+                                        <td colspan="2">{{ $katalogs->keterangan }}</td>
                                     </tr>
                                    
                                     <tr>
-                                        <td>Jumlah pesanan</td>
+                                        <td>Nama</td>
                                         <td>:</td>
-                                        <td>
+                                        <td colspan="2">
                                              <form method="post" action="{{ url('pesanans') }}/{{ $katalogs->id }}" >
                                             @csrf
                                                 <input type="text" name="jumlah_pesanans" class="form-control" required="">
-                                                <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Pesan</button>
                                             </form>
                                         </td>
                                     </tr>
-                                </tbody>
-                            </table>
-                        
-<body>
+
+                                    <tr>
+                                        <td>Alamat</td>
+                                        <td>:</td>
+                                        <td colspan="2">
+                                             <form method="post" action="{{ url('pesanans') }}/{{ $katalogs->id }}" >
+                                            @csrf
+                                                <input type="text" name="jumlah_pesanans" class="form-control" required="">
+                                            </form>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Kota</td>
+                                        <td>:</td>
+                                        <td colspan="2">
+                                             <form method="post" action="{{ url('pesanans') }}/{{ $katalogs->id }}" >
+                                            @csrf
+                                                <input type="text" name="jumlah_pesanans" class="form-control" required="">
+                                            </form>
+                                        </td>
+                                    </tr>
+
+                                    <tr >
+                                        <td>Kode pos</td>
+                                        <td>:</td>
+                                        <td colspan="2">
+                                             <form method="post" action="{{ url('pesanans') }}/{{ $katalogs->id }}" >
+                                            @csrf
+                                                <input type="text" name="jumlah_pesanans" class="form-control" required="">
+                                            </form>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>Jumlah pesanan</td>
+                                        <td>:</td>
+                                        <td colspan="2">
+                                             <form method="post" action="{{ url('pesanans') }}/{{ $katalogs->id }}" >
+                                            @csrf
+                                                <input type="text" name="jumlah_pesanans" class="form-control" required="">
+                                                
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <body>
 <div class="container">
      
     <div class="panel panel-primary">
-      <div class="panel-heading"><h2>Upload design disini</h2></div>
+      <div class="panel-heading"><h4>Upload design disini</h4></div>
       <div class="panel-body">
      
         @if ($message = Session::get('success'))
@@ -74,7 +122,7 @@
             </div>
         @endif
     
-        <form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">
+        <form style="width: 100%" action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
     
@@ -82,10 +130,10 @@
                     <input type="file" name="image" class="form-control">
                 </div>
      
-                <div class="col-md-6">
+                <td style="padding-top: 30px;">
+                    <br>
                     <button type="submit" class="btn btn-success">Upload</button>
-                </div>
-     
+                </td>
             </div>
         </form>
     
@@ -93,6 +141,21 @@
     </div>
 </div>
 </body>
+
+                                        </td>
+                                        <td style="padding-top: 23px;">
+                                            <br>
+                                            <form>
+                                                
+                                            </form>
+                                            <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Pesan</button>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        
+
                         
                         </div>
                     </div>
